@@ -21,16 +21,18 @@ data "terraform_remote_state" "tfc_random_pet" {
   }
 }
 
+
+
 # Terraform >= 0.12
 output "remote-state-pet-demo" {
-  value = data.tfc_random_pet.outputs.demo
+  value = data.terraform_remote_state.tfc_random_pet.outputs.demo
 }
 
 # Terraform <= 0.11
-#resource "aws_instance" "foo" {
-#  # ...
-#  subnet_id = "${data.terraform_remote_state.vpc.subnet_id}"
+#output "remote-state-pet-demo" {
+#  value = "${data.terraform_remote_state.tfc_random_pet.demo}"
 #}
+
 ```
 
 # Run example 
