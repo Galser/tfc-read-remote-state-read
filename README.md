@@ -9,7 +9,7 @@ This repository going to demo accessing the state of the `tfc-random-repo` in th
 
 Code in [main.tf](main.tf) :
 
-```
+```Terraform
 data "terraform_remote_state" "tfc_random_pet" {
   backend = "remote"
 
